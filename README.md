@@ -117,3 +117,40 @@ demo04: ES6
 ```
 
 `external-helpers` plugin, which allows Rollup to include any 'helpers' just once at the top of the bundle, rather than including them in every module that uses them (which is the default behaviour).
+
+
+
+demo05: npm packages
+---
+
+need use the `rollup-plugin-node-resolve` plugin
+
+`rollup.config.js`:
+``` javascript
+import resolve from 'rollup-plugin-node-resolve';
+
+export default {
+  input: 'index.js',
+  output: {
+    format: 'cjs',
+    file: './dist/dist.js'
+  },
+  plugins: [ resolve() ]
+}
+```
+
+
+
+demo06: Peer dependencies
+---
+For example, `the-answer` and `lodash`:
+``` javascript
+import answer from 'the-answer';
+import _ from 'lodash';
+```
+
+And we'll treat lodash as external, but not the-answer.  
+`rollup.config.js` add:
+``` javascript
+external: ['lodash']
+```
