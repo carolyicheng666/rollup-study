@@ -1,4 +1,4 @@
-rollup-demo
+rollup-study
 ===
 
 This is a collection of simple demos of rollup.js.
@@ -24,11 +24,12 @@ My `rollup version` is **0.53.3**, if you higher to me, maybe some differences.
 demo01: Output options.format
 ---
 
+if not set this, you will see:
 ``` bash
 [!] Error: You must specify options.format, which can be one of 'amd', 'cjs', 'es', 'iife' or 'umd'
 ```
 
-package.json:
+`package.json`:
 ``` json
 "scripts": {
   "build:amd": "rollup index.js -f amd -o ./dist/dist.amd.js",
@@ -40,17 +41,16 @@ package.json:
 }
 ```
 
-run:
 ``` bash
 $ npm run build:all
 ```
 
 
 
-demo02: Use `rollup.config.js`
+demo02: Use rollup.config.js
 ---
 
-rollup.config.js:
+`rollup.config.js`:
 ``` javascript
 export default [{
   input: 'index.js',
@@ -70,7 +70,7 @@ export default [{
 }]
 ```
 
-package.json:
+`package.json`:
 ``` json
 "scripts": {
   "build": "rollup -c"
@@ -86,7 +86,7 @@ $ npm run build
 demo03: Watch
 ---
 
-package.json:
+`package.json`:
 ``` json
 "scripts": {
   "dev": "rollup -c -w"
@@ -102,7 +102,7 @@ $ npm run dev
 demo04: ES6
 ---
 
-.babalrc
+`.babalrc`:
 ``` json
 {
   "presets": [
