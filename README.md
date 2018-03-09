@@ -143,6 +143,7 @@ export default {
 
 demo06: Peer dependencies
 ---
+
 For example, `the-answer` and `lodash`:
 ``` javascript
 import answer from 'the-answer';
@@ -154,3 +155,26 @@ And we'll treat lodash as external, but not the-answer.
 ``` javascript
 external: ['lodash']
 ```
+
+
+
+demo07: CDN
+---
+
+use `paths`, it will be used in the generated bundle instead of the module ID, allowing you to (for example) load dependencies from a CDN.
+
+For example `jquery`, `rollup.config.js` add:
+``` javascript
+output: {
+  ...
+  paths: {
+    jquery: 'https://cdn.bootcss.com/jquery/3.2.1/jquery.js'
+  },
+  globals: {
+    jquery: 'jQuery'
+  },
+  ...
+}
+```
+
+the `globals` tell Rollup that the jquery module ID equates to the global `jQuery` variable
