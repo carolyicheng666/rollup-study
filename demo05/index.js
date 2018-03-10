@@ -1,5 +1,3 @@
-import answer from 'the-answer';
+import r from "./main.js";
 
-export default function () {
-  console.log('the answer is ' + answer);
-}
+r();

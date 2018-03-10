@@ -1,15 +1,16 @@
 import resolve from 'rollup-plugin-node-resolve';
+import babel from 'rollup-plugin-babel';
 
-export default {
+export default [{
   input: 'index.js',
   output: {
-    format: 'cjs',
-    file: './dist/dist.js'
+    file: './dist/dist.js',
+    format: 'cjs'
   },
-  plugins: [resolve({
-    customResolveOptions: {
-      moduleDirectory: 'node_modules'
-    }
-  })],
-  external: ['lodash']
-}
+  plugins: [
+    resolve(),
+    babel({
+      exclude: 'node_modules/**'
+    })
+  ]
+}]

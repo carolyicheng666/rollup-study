@@ -1,3 +1,3 @@
-import Man from './man'
+import r from "./main.js";
 
-new Man('Carol').say()
+r();

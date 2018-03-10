@@ -1,3 +1,4 @@
+import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
@@ -13,9 +14,12 @@ export default {
       jquery: 'jQuery'
     }
   },
-  plugins: [resolve({
-    customResolveOptions: {
-      moduleDirectory: 'node_modules'
-    }
-  })]
+  plugins: [
+    resolve({
+      customResolveOptions: {
+        moduleDirectory: 'node_modules'
+      }
+    }),
+    commonjs()
+  ]
 }

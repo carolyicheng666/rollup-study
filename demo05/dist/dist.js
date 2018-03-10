@@ -1,9 +1,14 @@
 'use strict';
 
-var index$1 = 42;
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-function index () {
-  console.log('the answer is ' + index$1);
+var _ = _interopDefault(require('lodash'));
+
+var index = 42;
+
+function r () {
+  var result = _.compact([0, 1, false, 2, '', 3, index]);
+  console.log('the answer is ' + result);
 }
 
-module.exports = index;
+r();
