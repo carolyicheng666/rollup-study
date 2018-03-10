@@ -104,8 +104,9 @@ demo04: npm packages
 
 need use the `rollup-plugin-node-resolve` plugin and `rollup-plugin-commonjs` plugin
 
->The `rollup-plugin-node-resolve` plugin teaches Rollup how to find external modules.
->Some libraries expose ES6 modules that you can import as-is — **the-answer** is one such module. But at the moment, the majority of packages on npm are exposed as CommonJS modules instead. Until that changes, we need to convert CommonJS to ES2015 before Rollup can process them.The `rollup-plugin-commonjs` plugin does exactly that.
+>The `rollup-plugin-node-resolve` plugin teaches Rollup how to find external modules.  
+>Some libraries expose ES6 modules that you can import as-is — **the-answer** is one such module. But at the moment, the majority of packages on npm are exposed as CommonJS modules instead. Until that changes, we need to convert CommonJS to ES2015 before Rollup can process them.  
+>The `rollup-plugin-commonjs` plugin does exactly that.
 
 `rollup.config.js`:
 ``` javascript
