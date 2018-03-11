@@ -14,10 +14,9 @@ $ git clone https://github.com/carolyicheng666/rollup-study.git
 ```
 And you should do
 ``` bash
-$ npm i rollup -g
 $ npm i
 ```
-My `rollup version` is **0.53.3**, if you higher to me, maybe some differences. 
+My `rollup version` is **0.56.5**, if you higher to me, maybe some differences. 
 
 
 
@@ -145,6 +144,9 @@ external: ['lodash']
 demo06: Babel
 ---
 
+The easiest way to use both Babel and Rollup is with `rollup-plugin-babel`.  
+Before we run rollup, we need to install the `babel-preset-env` and the `babel-plugin-external-helpers` plugin.
+
 `.babelrc`:
 ``` json
 {
@@ -183,3 +185,37 @@ output: {
 ```
 
 the `globals` tell Rollup that the jquery module ID equates to the global `jQuery` variable
+
+
+
+demo08: Gulp
+---
+
+Rollup returns promises which are understood by gulp so integration is easy.
+
+`gulpfile.js`:
+``` javascript
+const gulp = require('gulp');
+const rollup = require('rollup');
+const resolve = require('rollup-plugin-node-resolve');
+const babel = require('rollup-plugin-babel');
+
+gulp.task('build', async function () {
+  const bundle = await rollup.rollup({
+    input: './index.js',
+    plugins: [
+      resolve(),
+      babel({
+        exclude: 'node_modules/**'
+      })
+    ]
+  });
+
+  await bundle.write({
+    file: './dist/dist.js',
+    format: 'umd',
+    name: 'dist',
+    sourcemap: true
+  });
+});
+```
