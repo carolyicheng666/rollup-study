@@ -1,0 +1,1 @@
+{"version":3,"file":"dist.js","sources":["../index.js"],"sourcesContent":["import './main.scss';\r\n\r\ndocument.body.innerHTML = `<div class=\"bg\"><p class=\"text-red\">test</p></div>`\r\n"],"names":[],"mappings":";;AAEA,QAAQ,CAAC,IAAI,CAAC,SAAS,GAAG,CAAC,kDAAkD,CAAC"}

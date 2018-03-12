@@ -284,3 +284,29 @@ export default {
 }
 ```
 
+
+
+demo11: Import and compile multiple .scss, .sass and .css files
+---
+
+Use [rollup-plugin-scss](https://github.com/thgh/rollup-plugin-scss) plugin
+
+`rollup.config.js`:
+``` javascript
+import scss from 'rollup-plugin-scss';
+
+export default {
+  ...
+  plugins: [
+    scss({
+      output: './dist/test.css'
+    })
+  ]
+}
+```
+
+`index.js`:
+``` javascript
+import './main.scss';
+...
+```
