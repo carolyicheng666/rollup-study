@@ -234,6 +234,7 @@ demo09: banner/footer
 ---
 
 String A string to prepend/append to the bundle. You can also supply a **Promise** that resolves to a **String** to generate it asynchronously (Note: **banner** and **footer** options will not break sourcemaps)  
+
 `rollup.config.js`:
 ``` javascript
 import pkg from './package.json';
@@ -243,3 +244,43 @@ export default {
   footer: '/* follow me on Github! @' + pkg.author + ' */'
 }
 ```
+
+
+
+demo10: Using plugins
+---
+
+>A list of available plugins is maintained on [the Rollup wiki](https://github.com/rollup/rollup/wiki/Plugins).
+
+For example, we use [rollup-plugin-json](https://github.com/rollup/rollup-plugin-json).
+
+`main.js`:
+``` javascript
+import answer from 'the-answer';
+import pkg from './package.json';
+
+export default function () {
+  console.log('the answer is ' + answer + ', the version is ' + pkg.version);
+}
+```
+
+`rollup.config.js`:
+``` javascript
+import json from 'rollup-plugin-json';
+export default {
+  ...
+  plugins: [ json() ]
+}
+```
+
+For another example, we use [rollup-plugin-uglify](https://github.com/TrySound/rollup-plugin-uglify).
+
+`rollup.config.js`:
+``` javascript
+import uglify from 'rollup-plugin-uglify';
+export default {
+  ...
+  plugins: [ uglify() ]
+}
+```
+
