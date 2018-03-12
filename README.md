@@ -20,10 +20,18 @@ My `rollup version` is **0.56.5**, if you higher to me, maybe some differences.
 
 
 
-demo01: Output options.format
+demo01: Output.format
 ---
 
-if not set this, you will see:
+String The format of the generated bundle. One of the following:
+
+**amd** – Asynchronous Module Definition, used with module loaders like RequireJS
+**cjs** – CommonJS, suitable for Node and Browserify/Webpack
+**es** – Keep the bundle as an ES module file
+**iife** – A self-executing function, suitable for inclusion as a `<script>` tag. (If you want to create a bundle for your application, you probably want to use this, because it leads to smaller file sizes.)
+**umd** – Universal Module Definition, works as **amd**, **cjs** and **iife** all in one
+
+If not set this, you will see:
 ``` bash
 [!] Error: You must specify options.format, which can be one of 'amd', 'cjs', 'es', 'iife' or 'umd'
 ```
@@ -218,4 +226,20 @@ gulp.task('build', async function () {
     sourcemap: true
   });
 });
+```
+
+
+
+demo09: banner/footer
+---
+
+String A string to prepend/append to the bundle. You can also supply a **Promise** that resolves to a **String** to generate it asynchronously (Note: **banner** and **footer** options will not break sourcemaps)  
+`rollup.config.js`:
+``` javascript
+import pkg from './package.json';
+export default {
+  ...
+  banner: '/* dist version ' + pkg.version + ' */',
+  footer: '/* follow me on Github! @' + pkg.author + ' */'
+}
 ```
