@@ -33,7 +33,7 @@ Index
 8. [Gulp](#demo08-gulp)
 9. [banner/footer](#demo09-banner/footer)
 10. [Using plugins](#demo10-using-plugins)
-11. [Import and compile multiple .scss, .sass and .css files](#demo11-import-and-compile-multiple-.scss-.sass-and-.css-files)
+11. [Import and compile multiple .scss, .sass and .css files](#demo11-import-and-compile-multiple-scss-sass-and-css-files)
 12. [Development & Production](#demo12-development-&-Production)
 
 
