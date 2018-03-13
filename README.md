@@ -25,10 +25,10 @@ demo01: Output.format
 
 String The format of the generated bundle. One of the following:
 
-**amd** – Asynchronous Module Definition, used with module loaders like RequireJS
-**cjs** – CommonJS, suitable for Node and Browserify/Webpack
-**es** – Keep the bundle as an ES module file
-**iife** – A self-executing function, suitable for inclusion as a `<script>` tag. (If you want to create a bundle for your application, you probably want to use this, because it leads to smaller file sizes.)
+**amd** – Asynchronous Module Definition, used with module loaders like RequireJS  
+**cjs** – CommonJS, suitable for Node and Browserify/Webpack  
+**es** – Keep the bundle as an ES module file  
+**iife** – A self-executing function, suitable for inclusion as a `<script>` tag. (If you want to create a bundle for your application, you probably want to use this, because it leads to smaller file sizes.)  
 **umd** – Universal Module Definition, works as **amd**, **cjs** and **iife** all in one
 
 If not set this, you will see:
@@ -109,7 +109,7 @@ $ npm run dev
 demo04: npm packages
 ---
 
-need use the `rollup-plugin-node-resolve` plugin and `rollup-plugin-commonjs` plugin
+Use the `rollup-plugin-node-resolve` plugin and `rollup-plugin-commonjs` plugin
 
 >The `rollup-plugin-node-resolve` plugin teaches Rollup how to find external modules.  
 >Some libraries expose ES6 modules that you can import as-is — **the-answer** is one such module. But at the moment, the majority of packages on npm are exposed as CommonJS modules instead. Until that changes, we need to convert CommonJS to ES2015 before Rollup can process them.  
@@ -176,7 +176,7 @@ Before we run rollup, we need to install the `babel-preset-env` and the `babel-p
 demo07: CDN
 ---
 
-use `paths`, it will be used in the generated bundle instead of the module ID, allowing you to (for example) load dependencies from a CDN.
+Use `paths`, it will be used in the generated bundle instead of the module ID, allowing you to (for example) load dependencies from a CDN.
 
 For example `jquery`, `rollup.config.js` add:
 ``` javascript
@@ -192,7 +192,7 @@ output: {
 }
 ```
 
-the `globals` tell Rollup that the jquery module ID equates to the global `jQuery` variable
+The `globals` tell Rollup that the jquery module ID equates to the global `jQuery` variable
 
 
 
@@ -351,5 +351,5 @@ export default {
 }
 ```
 
-Development: `npm run dev`
+Development: `npm run dev`  
 Production: `npm run build`
